@@ -36,7 +36,7 @@ public class TruncatedSpliterator<T> implements Spliterator<T> {
 		boolean tryAdvance;
 		try {
 			tryAdvance = spliterator.tryAdvance(decoratedAction);
-		} catch (TrunkStreamHere e) {
+		} catch (TruncateStreamHere e) {
 			return false;
 		}
 		return tryAdvance;
@@ -47,5 +47,5 @@ public class TruncatedSpliterator<T> implements Spliterator<T> {
 		return spliterator.trySplit();
 	}
 
-	public static class TrunkStreamHere extends RuntimeException { }
+	public static class TruncateStreamHere extends RuntimeException { }
 }
